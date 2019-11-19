@@ -2,6 +2,7 @@
 
 ```bash
 mvn install -s settings.xml
+mvn exec:java -Dexec.mainClass="wk.Program"
 ```
 
 ```bash
