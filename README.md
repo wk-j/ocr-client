@@ -1,5 +1,10 @@
 ## Client
 
 ```bash
-mvn exec:java -Dexec.mainClass="wk.Program"
+mvn install -s settings.xml
+```
+
+```bash
+docker login docker.pkg.github.com --username wk-j
+docker-compose up
 ```

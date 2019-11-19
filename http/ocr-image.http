@@ -1,0 +1,13 @@
+POST http://localhost:3000/image
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="profile"
+
+invoice
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="invoice.jpg"
+Content-Type: image/jpg
+
+< ./invoice.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

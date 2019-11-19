@@ -1,0 +1,10 @@
+POST http://localhost:3000/setprofile
+Content-Type: application/json
+
+{
+	"profile":"invoice",
+	"x":0,
+	"y":0,
+	"width":5,
+	"height":2
+}
