@@ -1,6 +1,5 @@
 package wk;
 
-import bcircle.ProImage;
 import bcircle.Profile;
 import bcircle.SendImage;
 import bcircle.SendProfile;
@@ -27,7 +26,7 @@ public class Program {
 
         {
             SendImage service = new SendImage(url);
-            String result = service.postImage(new ProImage() {
+            String result = service.postImage(new Profile() {
                 {
                     setProfile(profileName);
                     setPartImage("/Users/wk/GitHub/OcrClient/http/invoice.jpg");
