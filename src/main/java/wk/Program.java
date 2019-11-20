@@ -1,8 +1,8 @@
 package wk;
 
+import bcircle.ProImage;
 import bcircle.Profile;
-import bcircle.SendImage;
-import bcircle.SendProfile;
+import bcircle.SendOCR;
 
 public class Program {
     public static void main(String[] args) throws Exception {
@@ -10,30 +10,25 @@ public class Program {
         String url = "http://localhost:3000";
         String profileName = "invoice";
 
-        {
-            SendProfile profileClient = new SendProfile(url);
-            Profile profile = new Profile() {
-                {
-                    setProfile(profileName);
-                    setX(0);
-                    setY(0);
-                    setWidth(5);
-                    setHeight(5);
-                }
-            };
-            profileClient.postProfile(profile);
-        }
+        SendOCR client = new SendOCR(url);
+        Profile profile = new Profile() {
+            {
+                setProfile(profileName);
+                setX(0);
+                setY(0);
+                setWidth(2);
+                setHeight(5);
+            }
+        };
+        client.postProfile(profile);
 
-        {
-            SendImage service = new SendImage(url);
-            String result = service.postImage(new Profile() {
-                {
-                    setProfile(profileName);
-                    setPartImage("/Users/wk/GitHub/OcrClient/http/invoice.jpg");
-                }
-            });
+        String result = client.postImage(new ProImage() {
+            {
+                setProfile(profileName);
+                setPartImage("http/invoice.jpg");
+            }
+        });
 
-            System.out.println("result: " + result);
-        }
+        System.out.println("result: " + result);
     }
 }
